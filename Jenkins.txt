@@ -1,0 +1,83 @@
+Jenkins
+
+java -war jenkins.war
+http://localhost:8080
+
+INSTALL AND SETUP ON TOMCAT
+1. Download Tomcat 8 zip file and extract it
+2. download jenkins.war file and put it in tomcats webapps directory
+3. C:\Users\Sandeep.Patharkar\Downloads\apache-tomcat-8.5.23\bin>startup.bat
+4. http://localhost:8080 to goto tomcat server, http://localhost:8080/jenkins to goto jenkins server
+5. 6465da69b0354849a8c9f3302b07b40f   pwd generated after tomcat was started. Jenkins was deployed automatically
+6.unlock Jenkins - copy paste the password on Jenkins portal 
+7. Install Suggested plugins
+8. Create Admin/Admin user and start using Jenkins
+
+SETUP CLI
+1. Download Cli from Manage Jenkins > Jenkins CLI
+2. java -jar jenkins-cli.jar -s http://localhost:8080/jenkins/ help
+
+CONFIGS
+1. Add NODES - Manage Jenkins > Manage Nodes
+2. System Msg - System wide msg to users
+3. Quiet period - in seconds. period before an action will be triggered after an event
+4. SCM checkout retry count - Source code mgmt retry count before erroring out
+5. Global Params - Key - Value pairs that can be used globally
+6. SSH server
+7. Shell - give different shell to run the commands in
+
+JOBS
+=====
+1. freestyle job
+2. Build Periodically - syntax like cron job
+3. Trigger remotely - configre job > Build Triggers > build remotely.  Give a complex token name "ex 1234" and call from another browser
+Exhttp://localhost:8080/jenkins/job/Test1/build?token=1234
+
+CONTINOUS INTEGRATION WITH SCM (GIT)
+====================================
+1. Create a java program hello.java
+
+public class hello {
+public static void main (String[] args){
+for (int i=1;i<=3;i++) {
+System.out.println("Hello World" +i);
+}
+}
+}
+
+set path
+set "path=%path%;C:\Program Files\Java\jdk1.8.0_131\bin"
+
+Compile / Build - javac hello.java
+RUN				- java hello
+
+2. Create job in Jenkins and Test it
+build > execute windows shell >
+set "path=%path%;C:\Program Files\Java\jdk1.8.0_131\bin"
+cd C:\Users\Sandeep.Patharkar\Google Drive\Docs\Work\How to Docs\BigData\Jenkins
+javac hello.java
+java hello
+
+3. once the above is successful. Lets add this project to Git
+4. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
