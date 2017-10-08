@@ -59,7 +59,27 @@ javac hello.java
 java hello
 
 3. once the above is successful. Lets add this project to Git
-4. 
+4. cd to the director where the program files are 
+cd C:\Users\Sandeep.Patharkar\Google Drive\Docs\Work\How to Docs\BigData\Jenkins
+git init
+git status
+git add .
+git status
+git commit -m "hello world program added"
+
+--Login to Git. Create a new public repository "HelloWorld". copy the path of this repository
+git remote add origin https://github.com/sandy4v/HelloWorld.git
+git push -u origin master
+
+-- you should see all the files in github repository we just created
+
+5. goto jenkins job > configure > git > Repositories > <repository path>
+	Poll SCM > * * * * * --> This will keep looking for changes all the time. Change this as per project requirements.
+6. 
+
+
+
+
 
 
 
